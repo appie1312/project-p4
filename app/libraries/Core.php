@@ -50,18 +50,11 @@ class Core
         /**
          * Check of de method (tweede woord in de URL) bestaat in de controllerclass
          */
-        if (method_exists($this->currentController, $url[1])) {
-
-            /**
-             * Bewaar de naam van de method in $this->currentMethod
-             */
+        if (isset($url[1]) && method_exists($this->currentController, $url[1])) {
             $this->currentMethod = $url[1];
-
-            /**
-             * Verwijder de naam van de method uit het array $url
-             */
             unset($url[1]);
         }
+        
 
         /**
          * Als $url bestaat en niet null worden de waarden daarvan

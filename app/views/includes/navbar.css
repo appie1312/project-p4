@@ -1,0 +1,23 @@
+hr {
+    margin-top: 0;
+    background-color: black;
+}
+
+nav {
+    margin-bottom: 0;
+}
+
+nav {
+    z-index: 1;
+
+}
+.navbar{
+background-color: white;
+border-radius: 20px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+padding: 1rem 2rem;
+margin: 1rem;
+top: 1rem;
+left: 1rem;
+right: 1rem;
+z-index: 10;};
