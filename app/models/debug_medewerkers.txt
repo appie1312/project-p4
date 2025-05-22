@@ -1,0 +1,40 @@
+Functie getAllMedewerkers wordt aangeroepen
+Array
+(
+    [0] => Array
+        (
+            [Id] => 2
+            [GebruikerId] => 5
+            [Nummer] => 1001
+            [Medewerkersoort] => Beheerder
+            [Isactief] => 1
+            [Opmerking] => 
+            [Datumaangemaakt] => 2025-05-21 20:21:17.000000
+            [Datumgewijzigd] => 2025-05-21 20:21:17.000000
+        )
+
+    [1] => Array
+        (
+            [Id] => 3
+            [GebruikerId] => 6
+            [Nummer] => 1002
+            [Medewerkersoort] => Technicus
+            [Isactief] => 1
+            [Opmerking] => 
+            [Datumaangemaakt] => 2025-05-21 20:21:17.000000
+            [Datumgewijzigd] => 2025-05-21 20:21:17.000000
+        )
+
+    [2] => Array
+        (
+            [Id] => 4
+            [GebruikerId] => 7
+            [Nummer] => 1003
+            [Medewerkersoort] => Gastvrouw
+            [Isactief] => 1
+            [Opmerking] => 
+            [Datumaangemaakt] => 2025-05-21 20:21:17.000000
+            [Datumgewijzigd] => 2025-05-21 20:21:17.000000
+        )
+
+)
