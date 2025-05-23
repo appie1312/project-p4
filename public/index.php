@@ -1,4 +1,4 @@
-<?php
+git commit -m "Nieuwe bestanden en updates"<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
