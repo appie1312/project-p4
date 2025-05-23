@@ -1,3 +1,4 @@
+<?php require_once APPROOT . '/views/includes/navbar.php'; ?>
 <?php
 // Geen initialisatie van $tickets, $voorstellingen, $filters, $currentUser, $currentDateTime!
 // Alles komt uit de controller via extract($viewData);
