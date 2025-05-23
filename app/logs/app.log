@@ -1,0 +1,26 @@
+[2025-05-20 10:15:23] Code: ABC123, Resultaat: OK, User IP: 192.168.1.10
+[2025-05-20 10:16:05] Code: XYZ999, Resultaat: FAIL, User IP: 192.168.1.10
+[2025-05-20 10:17:44] Code: DEF456, Resultaat: OK, User IP: 192.168.1.12
+[2025-05-20 10:18:10] ERROR: Databasefout: Connection refused
+[2025-05-20 10:19:30] Code: GHI789, Resultaat: OK, User IP: 192.168.1.12[2025-05-20 18:36:43] Code: ABC123, Resultaat: OK
+[2025-05-20 18:37:31] Code: a, Resultaat: FAIL
+[2025-05-21 07:05:31] Code: ABC123, Resultaat: OK
+[2025-05-21 07:05:37] Code: 1, Resultaat: FAIL
+[2025-05-21 11:16:03] Code: ABC123, Resultaat: OK
+[2025-05-21 11:18:03] Code: ABC123, Resultaat: OK
+[2025-05-21 16:44:14] Code: ABC123, Resultaat: OK
+[2025-05-21 16:58:34] Code: TESTBARCODE123, Resultaat: FAIL
+[2025-05-21 17:01:16] Code: TESTBARCODE123, Resultaat: OK
+[2025-05-21 17:14:54] Code: ABC123, Resultaat: FAIL
+[2025-05-21 17:15:26] Code: TESTBARCODE123, Resultaat: OK
+[2025-05-21 17:31:56] Code: TESTBARCODE123, Resultaat: OK
+[2025-05-21 17:32:35] Code: TESTBARCODE123, Resultaat: OK
+[2025-05-21 17:32:41] Code: 1, Resultaat: FAIL
+[2025-05-22 10:27:45] Code: http://project.p4.test/public/result.php, Resultaat: FAIL
+[2025-05-22 10:28:04] Code: 	BARCODE789, Resultaat: FAIL
+[2025-05-22 10:28:22] Code: TESTBARCODE123, Resultaat: OK
+[2025-05-22 10:29:00] Code: 	BARCODE101, Resultaat: FAIL
+[2025-05-22 10:29:15] Code: 	BARCODE101, Resultaat: FAIL
+[2025-05-22 10:37:15] Code: BARCODE789, Resultaat: OK
+[2025-05-22 10:37:23] Code: BARCODE789, Resultaat: OK
+[2025-05-22 10:37:31] Code: B, Resultaat: FAIL
