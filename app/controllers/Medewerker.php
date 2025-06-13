@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/medewerkermodel.php';
 
-class MedewerkerController {
+class Medewerker {
     private $model;
 
     public function __construct() {

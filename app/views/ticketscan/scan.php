@@ -1,4 +1,4 @@
-<?php require_once APPROOT . '/views/includes/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>

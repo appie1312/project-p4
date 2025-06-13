@@ -1,31 +1,37 @@
 <?php
+
 require_once __DIR__ . '/../models/ticketmodel.php';
-class TicketController {
+
+class Ticket extends BaseController
+{
     private $ticketModel;
     private $currentUser;
     private $currentDateTime;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->ticketModel = new TicketModel();
-        $this->currentUser = 'jahir2004'; // In een echte applicatie zou dit uit de sessie komen
+        $this->currentUser = 'jahir2004'; // In een echte app komt dit uit de sessie
         $this->currentDateTime = date('Y-m-d H:i:s');
     }
 
-    public function index() {
+    public function index()
+    {
         try {
-            // Haal filter parameters op
+            // Filters ophalen uit GET-parameters
             $filters = [
                 'status' => $_GET['status'] ?? '',
                 'voorstelling' => $_GET['voorstelling'] ?? '',
                 'datum' => $_GET['datum'] ?? ''
             ];
 
-            // Haal data op via het model
+            // Data ophalen via model
             $tickets = $this->ticketModel->getAllTickets($filters);
             $voorstellingen = $this->ticketModel->getVoorstellingen();
 
-            // Bereid data voor voor de view
-            $viewData = [
+            // Viewdata klaarmaken
+            $data = [
+                'title' => 'Tickets',
                 'tickets' => $tickets,
                 'voorstellingen' => $voorstellingen,
                 'currentUser' => $this->currentUser,
@@ -33,24 +39,17 @@ class TicketController {
                 'filters' => $filters
             ];
 
-            // Toon de view
-            $this->loadView('ticket/index', $viewData);
-
+            // View inladen
+            $this->view('ticket/index', $data);
         } catch (Exception $e) {
-            $viewData = [
+            $data = [
+                'title' => 'Tickets - Fout',
                 'error' => $e->getMessage(),
                 'currentUser' => $this->currentUser,
                 'currentDateTime' => $this->currentDateTime
             ];
-            $this->loadView('ticket/index', $viewData);
-        }
-    }
 
-    private function loadView($viewName, $data) {
-        // Extract data zodat het beschikbaar is in de view
-        extract($data);
-        
-        // Include de view file
-        require_once __DIR__ . "/../views/{$viewName}.php";
+            $this->view('ticket/index', $data);
+        }
     }
 }

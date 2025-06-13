@@ -25,7 +25,13 @@
             <a class="nav-link active" aria-current="page" href="/index">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="index.php?url=ticket/index">ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?url=medewerker/index">medewerker</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?url=ticketscan/scan">ticketscan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/meldingen">meldingen</a>

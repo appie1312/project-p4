@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../models/Ticketscan.php';
 require_once __DIR__ . '/../models/Log.php';
 
-class TicketscanController {
+class Ticketscan {
     public function scan() {
         require __DIR__ . '/../views/ticketscan/scan.php';
     }

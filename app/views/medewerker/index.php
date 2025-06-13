@@ -1,3 +1,4 @@
+<?php require_once APPROOT . '/views/includes/navbar.php'; ?>
 <?php
 // Initialiseer variabelen om "undefined" notices te voorkomen
 $medewerkers = $medewerkers ?? [];
