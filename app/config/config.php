@@ -11,7 +11,7 @@ define('DB_PASS', '');
 /**
  * De naam van de virtualhost
  */
-define('URLROOT', 'aurora');
+define('URLROOT', '');
 
 /**
  * Het pad naar de folder app

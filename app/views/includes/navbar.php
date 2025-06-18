@@ -36,6 +36,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/meldingen">meldingen</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/melden">melden</a>
+          </li>
           <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown dropdown-menu-end">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
