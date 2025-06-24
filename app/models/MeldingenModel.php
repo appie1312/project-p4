@@ -6,7 +6,7 @@ class MeldingenModel
 
     public function __construct()
     {
-        $this->db = new Database(); // Zorg dat je een Database helper hebt in app/libraries/Database.php
+        $this->db = new Database();
     }
 
     public function getAllMeldingen()
@@ -22,31 +22,31 @@ class MeldingenModel
         return $this->db->single();
     }
 
-    public function create($postData)
-    {
-        $this->db->query("INSERT INTO Melding (Nummer, Type, Bericht, Isactief, Datumaangemaakt) VALUES (:nummer, :type, :bericht, 1, NOW())");
-        $this->db->bind(':nummer', $postData['klantnummer']);
-        $this->db->bind(':type', $postData['type']);
-        $this->db->bind(':bericht', $postData['bericht']);
-        return $this->db->execute();
-    }
 
     public function delete($Id)
     {
-    $this->db->query("DELETE FROM Melding WHERE Id = :id");
-    $this->db->bind(':id', $Id);
-    return $this->db->execute();
-    
+        $this->db->query("DELETE FROM Melding WHERE Id = $Id");
+        return $this->db->execute();
     }
-
-
+    
     public function updateMelding($postData)
     {
-        $this->db->query("UPDATE Melding SET Nummer = :nummer, Type = :type, Bericht = :bericht WHERE Id = :id");
-        $this->db->bind(':nummer', $postData['klantnummer']);
+        $this->db->query("UPDATE Melding 
+            SET Nummer = :nummer, 
+                Type = :type, 
+                Bericht = :bericht, 
+                Opmerking = :opmerking, 
+                Isactief = :isactief, 
+                Datumgewijzigd = NOW(6)
+            WHERE Id = :id");
+    
+        $this->db->bind(':nummer', $postData['nummer']);
         $this->db->bind(':type', $postData['type']);
         $this->db->bind(':bericht', $postData['bericht']);
+        $this->db->bind(':opmerking', $postData['opmerking'] ?? null);
+        $this->db->bind(':isactief', $postData['isactief'] ?? 1);
         $this->db->bind(':id', $postData['id']);
+    
         return $this->db->execute();
     }
 }

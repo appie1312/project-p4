@@ -30,23 +30,20 @@ class melden extends BaseController
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            // Verplicht
             if (empty($_POST['nummer']) || empty($_POST['type']) || empty($_POST['bericht'])) {
                 $data['error'] = 'Vul alle velden in';
                 $this->view('melden/index', $data);
                 return;
             }
 
-            // Bouw data array passend bij de tabel
             $meldingData = [
                 'nummer' => (int)$_POST['nummer'],
-                'type' => trim($_POST['type']),
-                'bericht' => trim($_POST['bericht']),
+                'type' => $_POST['type'],
+                'bericht' => $_POST['bericht'],
                 'isactief' => 1,
                 'opmerking' => $_POST['opmerking'] ?? null,
                 'bezoekerId' => $_POST['bezoekerId'] ?? null,
                 'medewerkerId' => $_POST['medewerkerId'] ?? null,
-                // datumaangemaakt en datumgewijzigd zet je in model bij insert
             ];
 
             $this->meldenModel->create($meldingData);

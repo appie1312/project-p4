@@ -15,7 +15,9 @@ if(session_status() == PHP_SESSION_NONE){
   <title><?= $data['title']; ?></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
+
 <body class="bg-light">
+
 <?php if (isset($_SESSION['success'])): ?>
     <div class="alert alert-success">
         <?= $_SESSION['success'] ?>
@@ -45,6 +47,7 @@ if(session_status() == PHP_SESSION_NONE){
           <th>Bericht</th>
           <th>Datum</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -56,16 +59,15 @@ if(session_status() == PHP_SESSION_NONE){
             <td><?= htmlspecialchars($melding->Bericht) ?></td>
             <td><?= htmlspecialchars($melding->Datumaangemaakt) ?></td>
             <td>
-              <form method="post" action="<?= URLROOT ?>/meldingen/delete/<?= $melding->Id ?>" onsubmit="return confirm('Weet je zeker dat je deze melding wilt verwijderen?');">
-                <button type="submit" class="btn btn-danger btn-sm">Verwijder</button>
+            <a href="<?= URLROOT; ?>/meldingen/edit/<?= $melding->Id; ?>">
+    <i class="bi bi-pencil-square text-success">pls werk</i>
+</a>         
+            <td>
+              <form method="get" action="index.php" style="display:inline;" onsubmit="return confirm('Weet je zeker dat je deze melding wilt verwijderen?');">
+                  <input type="hidden" name="url" value="meldingen/delete/<?= $melding->Id ?>">
+                  <button type="submit" class="btn btn-danger btn-sm">Verwijder</button>
               </form>
             </td>
-            
-            <td>
-                                <a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>">
-                                    <i class="bi bi-trash3-fill text-danger"></i>
-                                </a>
-                            </td>
           </tr>
         <?php endforeach; ?>
       </tbody>
