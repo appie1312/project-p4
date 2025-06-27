@@ -46,8 +46,8 @@ if(session_status() == PHP_SESSION_NONE){
           <th>Type</th>
           <th>Bericht</th>
           <th>Datum</th>
-          <th></th>
-          <th></th>
+          <th>Edit</th>
+          <th>Verwijderen</th>
         </tr>
       </thead>
       <tbody>
@@ -60,7 +60,7 @@ if(session_status() == PHP_SESSION_NONE){
             <td><?= htmlspecialchars($melding->Datumaangemaakt) ?></td>
             <td>
             <a href="<?= URLROOT; ?>/meldingen/edit/<?= $melding->Id; ?>">
-    <i class="bi bi-pencil-square text-success">pls werk</i>
+    <i class="bi bi-pencil-square text-success">✏️</i>
 </a>         
             <td>
               <form method="get" action="index.php" style="display:inline;" onsubmit="return confirm('Weet je zeker dat je deze melding wilt verwijderen?');">

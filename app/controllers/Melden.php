@@ -27,15 +27,15 @@ class melden extends BaseController
             'message' => 'none',
             'error' => ''
         ];
-
+    
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    
             if (empty($_POST['nummer']) || empty($_POST['type']) || empty($_POST['bericht'])) {
                 $data['error'] = 'Vul alle velden in';
                 $this->view('melden/index', $data);
                 return;
             }
-
+    
             $meldingData = [
                 'nummer' => (int)$_POST['nummer'],
                 'type' => $_POST['type'],
@@ -45,18 +45,24 @@ class melden extends BaseController
                 'bezoekerId' => $_POST['bezoekerId'] ?? null,
                 'medewerkerId' => $_POST['medewerkerId'] ?? null,
             ];
-
-            $this->meldenModel->create($meldingData);
-
-            $data['message'] = 'flex';
-            $data['title'] = 'Melding succesvol toegevoegd';
-
-            $_POST = [];
-
+    
+            try {
+                $this->meldenModel->create($meldingData);
+    
+                $data['message'] = 'flex';
+                $data['title'] = 'Melding succesvol toegevoegd';
+    
+                $_POST = [];
+    
+            } catch (Exception $e) {
+                $data['error'] = 'Er ging iets mis bij het opslaan van de melding.';
+            }
+    
             $this->view('melden/index', $data);
             return;
         }
-
+    
         $this->view('melden/index', $data);
     }
+    
 }

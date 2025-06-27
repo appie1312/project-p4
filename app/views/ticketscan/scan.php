@@ -1,3 +1,4 @@
+<?php require_once APPROOT . '/views/includes/navbar.php'; ?>
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -9,6 +10,9 @@
             min-height: 100vh;
             background: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
             margin: 0;
+        }
+        .ticket{
+            margin-top: 20vh;
             font-family: 'Segoe UI', Arial, sans-serif;
             display: flex;
             align-items: center;
@@ -63,12 +67,14 @@
     </style>
 </head>
 <body>
+    <div class="ticket">
     <div class="ticket-container">
         <h1>Scan je ticket!</h1>
         <form method="post" action="index.php?controller=ticketscan&action=validate">
             <input type="text" name="code" placeholder="Voer ticketcode in" required autofocus>
             <button type="submit">Check ticket</button>
         </form>
+    </div>
     </div>
 </body>
 </html>

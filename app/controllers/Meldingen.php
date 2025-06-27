@@ -25,14 +25,17 @@ class Meldingen extends BaseController
             session_start();
         }
 
-        $result = $this->meldingenModel->delete($Id);
-    
-        if ($result) {
-            $_SESSION['success'] = "Melding succesvol verwijderd!";
-        } else {
-            $_SESSION['error'] = "Verwijderen is mislukt. Probeer het nog eens.";
-        }
+        try {
+            $result = $this->meldingenModel->delete($Id);
         
+            if ($result) {
+                $_SESSION['success'] = "Melding succesvol verwijderd!";
+            } else {
+                $_SESSION['error'] = "Verwijderen is mislukt. Probeer het nog eens.";
+            }
+        } catch (Exception $e) {
+            $_SESSION['error'] = "Er ging iets mis bij het verwijderen.";
+        }
 
         header('Location: ' . URLROOT . '/meldingen/index');
         exit;
