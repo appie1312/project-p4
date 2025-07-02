@@ -17,12 +17,13 @@ class BaseController
      * mee aan de view met het $data-array
      */
     public function view($view, $data = [])
+   {
+    if (file_exists('../app/views/' . $view . '.php'))
     {
-        if (file_exists('../app/views/' . $view . '.php'))
-        {
-            require_once('../app/views/' . $view . '.php');
-        } else {
-            echo 'View bestaat niet';
-        }
+        extract($data); // <-- Voeg deze regel toe
+        require_once('../app/views/' . $view . '.php');
+    } else {
+        echo 'View bestaat niet';
     }
+}
 }
