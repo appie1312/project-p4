@@ -52,8 +52,16 @@ class Medewerker {
     try {
         $result = $this->model->deleteMedewerker($id);
         // Je kunt eventueel een succesmelding meegeven via een sessie of querystring
+         if ($result) {
+            header('Location: ' . URLROOT . '/medewerker/index?success=verwijderd');
+        } else {
+            header('Location: ' . URLROOT . '/medewerker/index?error=verwijderen');
+        }
+        exit;
     } catch (Exception $e) {
         // Je kunt eventueel een foutmelding tonen
+        header('Location: ' . URLROOT . '/medewerker/index?error=verwijderen');
+        exit;
     }
 
     // Altijd terug naar het overzicht

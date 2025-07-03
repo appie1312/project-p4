@@ -36,17 +36,17 @@ if ($controller == 'medewerker') {
             <a href="medewerker/create" class="btn-toevoegen">Nieuwe Medewerker Toevoegen</a>
         </div>
 
-        <?php if (isset($error) && $error): ?>
-            <div class="alert alert-danger">
-                <?php echo htmlspecialchars($error); ?>
-            </div>
-        <?php endif; ?>
+        <?php if (isset($_GET['success']) && $_GET['success'] === 'verwijderd'): ?>
+                    <div class="alert alert-success" role="alert">
+                        Medewerker is succesvol verwijderd.
+                    </div>
+                <?php endif; ?>
 
-        <?php if (isset($success) && $success): ?>
-            <div class="alert alert-success">
-                <?php echo htmlspecialchars($success); ?>
-            </div>
-        <?php endif; ?>
+                <?php if (isset($_GET['error']) && $_GET['error'] === 'verwijderen'): ?>
+                    <div class="alert alert-danger" role="alert">
+                        Fout bij verwijderen medewerker.
+                    </div>
+                <?php endif; ?>
 
        <table>
     <thead>
